@@ -13,10 +13,7 @@ library(tidyr)
 library(RColorBrewer)
 library(pageviews)
 library(scales)
-<<<<<<< HEAD
 library(ggridges)
-=======
->>>>>>> f337570c9492308db33a56db284890a2828cee7b
 
 # load in celebrity data table
 celebrity_table <- read.csv(paste0(getwd(), "/celebrity_wikipedia_url_dt.csv"))
