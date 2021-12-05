@@ -1,10 +1,6 @@
 source("source_wikipedia_data.R")
 
 ui <- dashboardPage(
-<<<<<<< HEAD
-=======
-  
->>>>>>> f337570c9492308db33a56db284890a2828cee7b
   skin = "black",
   dashboardHeader(
     title = "Hype Dashboard",
@@ -23,7 +19,6 @@ ui <- dashboardPage(
       id = "sidebar", # id important for updateTabItems
       menuItem("Home", tabName = "home", icon = icon("home", lib = "font-awesome", "fa-1x")),
       menuItem("Celebrity Hype", tabName = "celebrityhypetrends", icon = icon("chart-line", lib = "font-awesome", "fa-1x")),
-<<<<<<< HEAD
       menuItem("Wikipedia Page Views", tabName = "celebritywikipediapageviews", icon = icon("table", lib = "font-awesome", "fa-1x")),
       menuItem("Celebrity Statistics", tabName = "celebrityhypesummarystats", icon = icon("flask", lib = "font-awesome", "fa-1x"))
     )
@@ -40,23 +35,6 @@ ui <- dashboardPage(
       # Home - dashboard info text #
       #############################
 
-=======
-      menuItem("Wikipedia Page Views", tabName = "celebritywikipediapageviews", icon = icon("table", lib = "font-awesome", "fa-1x"))
-    )
-  ),
-  dashboardBody(
-    
-    #################################################################################################
-    #                                       Main Dashbaord Body                                    #
-    ###############################################################################################
-    
-    tabItems(
-      
-      ###############################
-      # Home - dashboard info text #
-      #############################
-      
->>>>>>> f337570c9492308db33a56db284890a2828cee7b
       tabItem(
         "home",
         withTags({
@@ -115,19 +93,11 @@ ui <- dashboardPage(
           )
         )
       ),
-<<<<<<< HEAD
 
       ##########################
       # Celebrity Hype Trends #
       ########################
 
-=======
-      
-      ##########################
-      # Celebrity Hype Trends #
-      ########################
-      
->>>>>>> f337570c9492308db33a56db284890a2828cee7b
       tabItem(
         "celebrityhypetrends",
         titlePanel(div("Celebrity Hype Trends", style = "font-size: 32px; padding-bottom: 20px")),
@@ -168,19 +138,11 @@ ui <- dashboardPage(
           fluidRow(column(8, plotlyOutput("celebritytrendplot", height = "100%")), column(4, plotlyOutput("celebritytrendbarplot", height = "100%")))
         )
       ),
-<<<<<<< HEAD
 
       ####################################
       # pageview data tables / download #
       ###################################
 
-=======
-      
-      ####################################
-      # pageview data tables / download #
-      ###################################
-      
->>>>>>> f337570c9492308db33a56db284890a2828cee7b
       tabItem(
         "celebritywikipediapageviews",
         fluidRow(
@@ -219,17 +181,12 @@ ui <- dashboardPage(
           ),
           column(
             2,
-<<<<<<< HEAD
-=======
-
->>>>>>> f337570c9492308db33a56db284890a2828cee7b
             fluidRow(
               style = "padding-top:101px;text-slign:left;",
               downloadButton("download", "Download")
             )
           )
         )
-<<<<<<< HEAD
       ),
       tabItem(
         "celebrityhypesummarystats",
@@ -279,8 +236,6 @@ ui <- dashboardPage(
           }),
           plotOutput("anovafitplots")
         )
-=======
->>>>>>> f337570c9492308db33a56db284890a2828cee7b
       )
     )
   )
