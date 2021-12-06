@@ -2,6 +2,7 @@ source("source_wikipedia_data.R")
 
 
 server <- function(input, output, session) {
+<<<<<<< HEAD
 
   #################################################################################################
   #                                       DATA OUTPUT ELEMENTS                                   #
@@ -12,6 +13,18 @@ server <- function(input, output, session) {
   # page view raw data table #
   ###########################
 
+=======
+  
+  #################################################################################################
+  #                                       DATA OUTPUT ELEMENTS                                   #
+  ###############################################################################################
+  
+  
+  #############################
+  # page view raw data table #
+  ###########################
+  
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   output$wikipedia_df_raw <- renderDataTable({
     # initialize updated data for data table output
     wikipedia_raw_df <- session_data_input() %>%
@@ -41,7 +54,11 @@ server <- function(input, output, session) {
   #######################################
   # page view summary stats data table #
   #####################################
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   output$summarystats <- renderDataTable({
     # initialize updated data for data table output
     wikipedia_summary_df <- session_data_input() %>%
@@ -81,7 +98,11 @@ server <- function(input, output, session) {
   ########################################################
   # Celebrity Hype Trends bar plot - average hype score #
   ######################################################
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   output$celebritytrendbarplot <- renderPlotly({
     # initialize updated data for bar plot output
     rescaled_wikipedia_df <- session_data_input()
@@ -112,7 +133,11 @@ server <- function(input, output, session) {
   ######################################################
   # Celebrity Hype Trends line plot  - hype over time #
   ####################################################
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   output$celebritytrendplot <- renderPlotly({
     # initialize updated data for trend plot
     rescaled_wikipedia_df <- session_data_input()
@@ -137,7 +162,11 @@ server <- function(input, output, session) {
   ####################################
   # Download handler - pageview raw #
   ##################################
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   output$download <- downloadHandler(
     filename = function() {
       paste0("wikipedia_df_", Sys.Date(), ".csv")
@@ -158,7 +187,11 @@ server <- function(input, output, session) {
   ##############################################
   # Download handler - pageview summary stats #
   ############################################
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   output$downloadsummary <- downloadHandler(
     filename = function() {
       paste0("wikipedia_df_summary_stats_", Sys.Date(), ".csv")
@@ -188,6 +221,7 @@ server <- function(input, output, session) {
       )
     }
   )
+<<<<<<< HEAD
 
   #############################################
   # Celebrity Hype Summary Stats - Histogram #
@@ -269,11 +303,17 @@ server <- function(input, output, session) {
     plot(anovaresults())
     par(mfrow=c(1,1))
   })
+=======
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   
   #################################################################################################
   #                                       REACTIVE DATA UPDATE ELEMENTS                          #
   ###############################################################################################
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
   # Reactive expressions are smarter than regular R functions.
   # They cache their values and know when their values have become outdated.
   session_data_input <- reactive({
@@ -285,6 +325,7 @@ server <- function(input, output, session) {
     rescaled_wikipedia_df <- generate_trend_scores(groupped_wikipedia_df)
     return(rescaled_wikipedia_df)
   })
+<<<<<<< HEAD
   
   # Reactive expressions are smarter than regular R functions.
   # They cache their values and know when their values have become outdated.
@@ -294,4 +335,6 @@ server <- function(input, output, session) {
     result <- aov(weekly_pageviews ~ fullname, data = rescaled_wikipedia_df)
     return(result)
   })
+=======
+>>>>>>> f337570c9492308db33a56db284890a2828cee7b
 }
