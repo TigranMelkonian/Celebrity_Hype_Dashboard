@@ -2,7 +2,6 @@ source("source_wikipedia_data.R")
 
 
 server <- function(input, output, session) {
-  
   #################################################################################################
   #                                       DATA OUTPUT ELEMENTS                                   #
   ###############################################################################################
@@ -297,6 +296,5 @@ server <- function(input, output, session) {
     result <- aov(hype_score ~ fullname, data = rescaled_wikipedia_df)
     return(result)
   })
-  
-  
+
 }

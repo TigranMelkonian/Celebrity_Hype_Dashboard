@@ -15,7 +15,6 @@ library(pageviews)
 library(scales)
 library(ggridges)
 
-
 # load in celebrity data table
 celebrity_table <- read.csv(paste0(getwd(), "/celebrity_wikipedia_url_dt.csv"))
 
